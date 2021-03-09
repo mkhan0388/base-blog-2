@@ -13,7 +13,9 @@
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
   <body>
-    <header>
+    <header class="container">
+      <div class="row">
+        <div class="p-3 mb-2 bg-secondary text-white">
       <h1 class="home"><a href="{{ '/' | url }}">{{ metadata.title }}</a></h1>
 
       {#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
@@ -22,6 +24,8 @@
         <li class="nav-item{% if entry.url == page.url %} nav-item-active{% endif %}"><a href="{{ entry.url | url }}">{{ entry.title }}</a></li>
       {%- endfor %}
       </ul>
+      </div>
+      </div>
     </header>
 
     <main{% if templateClass %} class="{{ templateClass }}"{% endif %}>
@@ -31,9 +35,14 @@
       {{ content | safe }}
     </main>
 
-    <footer>
-      <p>This is my blog, do not COPY!!!</p>
+    <footer class="conatiner-fluid">
+      <div class="row">
+        <div class="p-3 mb-2 bg-secondary text-white">
+      <p  class="text-start text-decoration-underline">This is my blog, do not COPY!!!</p>
+      </div>
+      </div>
     </footer>
+
 
     <!-- Current page: {{ page.url | url }} -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
